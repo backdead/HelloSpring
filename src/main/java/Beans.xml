@@ -2,8 +2,54 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
-		<property name="message" value="getMessage()" />
+	
+	<!-- init-method="init" destroy-method="destroy" -->
+	 
+	<!-- <bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+		<property name="message1" value="hello world"></property>
+		<property name="message2" value="hello second world"></property>
 	</bean>
+	<bean id="byeWorld" class="com.tutorialspoint.ByeWorld" parent="helloWorld">
+		<property name="message1" value="bye world"></property>
+		<property name="message3" value="bye third world"></property>
+	</bean> -->
+	
+	<!-- <bean id="beanTemplate" abstract="true">
+		<property name="message1" value="hello world"></property>
+		<property name="message2" value="hello second world"></property>
+		<property name="message3" value="hello third world"></property>
+	</bean>
+	
+	<bean id="byeWorld" class="com.tutorialspoint.ByeWorld" parent="beanTemplate">
+		<property name="message1" value="bye world"></property>
+		<property name="message3" value="bye third world"></property>
+	</bean> -->
+	
+	<!-- <bean id="textEditor" class="com.tutorialspoint.TextEditor">
+		<constructor-arg ref="spellChecker" />
+	</bean>
+	
+	<bean id="spellChecker" class="com.tutorialspoint.SpellChecker"
+	</bean> -->
+	<bean id="textEditor" class="com.tutorialspoint.TextEditor">
+		<property name="spellChecker" ref="spellChecker"></property>
+	</bean>
+	
+	<bean id="spellChecker" class="com.tutorialspoint.SpellChecker"></bean>
+	
+	<!-- <bean id="car" class="com.tutorialspoint.Car">
+		<constructor-arg ref="engine"></constructor-arg>
+		<constructor-arg ref="wheel"></constructor-arg>
+	</bean>
+	
+	<bean id="engine" class="com.tutorialspoint.Engine">
+		<constructor-arg index="0" value="Ferari"></constructor-arg>
+		<constructor-arg index="1" value="5400"></constructor-arg>
+	</bean>
+	<bean id="wheel" class="com.tutorialspoint.Wheel">
+		<constructor-arg type="String" value="Michellin"></constructor-arg>
+	</bean> -->
+	
+	
+	<!-- <bean class="com.tutorialspoint.InitHelloWorld"></bean> -->
 </beans>
