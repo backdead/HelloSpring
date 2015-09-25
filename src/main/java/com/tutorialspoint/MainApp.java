@@ -21,10 +21,17 @@ public class MainApp {
 //      
 //      context.registerShutdownHook();
 	   
-	   TextEditor te = (TextEditor) context.getBean("textEditor");
-	   te.spellCheck();
+//	   TextEditor te = (TextEditor) context.getBean("textEditor");
+//	   te.spellCheck();
 	   
 //	   Car car = (Car) context.getBean("car");
 //	   car.start();
+	   
+	   JavaCollection obj = (JavaCollection) context.getBean("javaCollection");
+	   obj.getAddressList();
+	   obj.getAddressSet();
+	   obj.getAddressMap();
+	   obj.getAddressPro();
+	   
    } 
 }
