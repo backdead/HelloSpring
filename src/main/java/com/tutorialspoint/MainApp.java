@@ -8,10 +8,12 @@ public class MainApp {
 	   AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 //	   //XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
 //
-//      SayToWorld objA = (SayToWorld) context.getBean("helloWorld");
+//      SayToWorld objA = (SayToWorld) context.getBean("sayToWorld");
 //      
 //      objA.getMessage1();
 //      objA.getMessage2();
+//      
+//      context.registerShutdownHook();
 //
 //      ByeWorld objB = (ByeWorld) context.getBean("byeWorld");
 //      
@@ -21,17 +23,26 @@ public class MainApp {
 //      
 //      context.registerShutdownHook();
 	   
-//	   TextEditor te = (TextEditor) context.getBean("textEditor");
-//	   te.spellCheck();
+	   TextEditor te = (TextEditor) context.getBean("textEditor");
+	   te.spellCheck();
 	   
 //	   Car car = (Car) context.getBean("car");
 //	   car.start();
 	   
-	   JavaCollection obj = (JavaCollection) context.getBean("javaCollection");
-	   obj.getAddressList();
-	   obj.getAddressSet();
-	   obj.getAddressMap();
-	   obj.getAddressPro();
+//	   JavaCollection obj = (JavaCollection) context.getBean("javaCollection");
+//	   obj.getAddressList();
+//	   obj.getAddressSet();
+//	   obj.getAddressMap();
+//	   obj.getAddressPro();
+	   
+//	   Student obj = (Student) context.getBean("student");
+//	   
+//	   System.out.println("Name: " + obj.getName());
+//	   System.out.println("Age: " + obj.getAge());
+	   
+//	   CarFactory obj = (CarFactory) context.getBean("carFactory");
+//	   
+//	   obj.start();
 	   
    } 
 }

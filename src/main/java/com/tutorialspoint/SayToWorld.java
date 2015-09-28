@@ -1,16 +1,21 @@
 package com.tutorialspoint;
 
-public abstract class SayToWorld {
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class SayToWorld {
 	private String message1;
 	private String message2;
 	
+	@PostConstruct
 	public void init() {
-//		System.out.println("Initialiez the parameter");
-//		message = "OK";
+		System.out.println("Initialiez the parameter");
+		message1 = "OK";
 	}
 	
+	@PreDestroy
 	public void destroy() {
-		//System.out.println("Bean will destroy now.");
+		System.out.println("Bean will destroy now.");
 	}
 	
 	public void setMessage1(String message1) {

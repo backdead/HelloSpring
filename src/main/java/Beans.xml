@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
 
 	<!-- init-method="init" destroy-method="destroy" -->
 
-	<!-- <bean id="helloWorld" class="com.tutorialspoint.HelloWorld"> <property 
-		name="message1" value="hello world"></property> <property name="message2" 
-		value="hello second world"></property> </bean> <bean id="byeWorld" class="com.tutorialspoint.ByeWorld" 
-		parent="helloWorld"> <property name="message1" value="bye world"></property> 
-		<property name="message3" value="bye third world"></property> </bean> -->
+	<!-- <bean id="sayToWorld" class="com.tutorialspoint.SayToWorld" init-method="init" 
+		destroy-method="destroy"> <property name="message1" value="hello world"></property> 
+		<property name="message2" value="hello second world"></property> </bean> -->
+	<!-- <bean id="byeWorld" class="com.tutorialspoint.ByeWorld" parent="helloWorld"> 
+		<property name="message1" value="bye world"></property> <property name="message3" 
+		value="bye third world"></property> </bean> -->
 
 	<!-- <bean id="beanTemplate" abstract="true"> <property name="message1" 
 		value="hello world"></property> <property name="message2" value="hello second 
@@ -26,46 +31,21 @@
 		class="com.tutorialspoint.SpellChecker"></bean> -->
 
 	<!-- Inner Bean -->
-	<!-- <bean id="textEditor" class="com.tutorialspoint.TextEditor"> <property 
-		name="spellChecker"> <bean id="spellChecker" class="com.tutorialspoint.SpellChecker" 
-		/> </property> </bean> -->
+	<bean id="textEditor" class="com.tutorialspoint.TextEditor">
+		<!-- <property name="spellChecker">
+			<bean id="spellChecker" class="com.tutorialspoint.SpellChecker" />
+		</property> -->
+	</bean>
 
 	<!-- Injection collection -->
-	<bean id="javaCollection" class="com.tutorialspoint.JavaCollection">
-		<!-- setAddressList call -->
-		<property name="addressList">
-			<list>
-				<value>CHINE</value>
-				<value>FRANCE</value>
-				<value>USA</value>
-				<value>LUXEMBOURG</value>
-			</list>
-		</property>
-
-		<!-- setAddressSet call -->
-		<property name="addressSet">
-			<set>
-				<value>KOR</value>
-				<value>BRAZIL</value>
-			</set>
-		</property>
-
-		<!-- setAddressMap call -->
-		<property name="addressMap">
-			<map>
-				<entry key="1" value="ARG" />
-				<entry key="2" value="DEU" />
-			</map>
-		</property>
-
-		<!-- setAddressPro call -->
-		<property name="addressPro">
-			<props>
-				<prop key="1">KEVIN</prop>
-				<prop key="2">FANNY</prop>
-			</props>
-		</property>
-	</bean>
+	<!-- <bean id="javaCollection" class="com.tutorialspoint.JavaCollection"> 
+		setAddressList call <property name="addressList"> <list> <value>CHINE</value> 
+		<value>FRANCE</value> <value>USA</value> <value>LUXEMBOURG</value> </list> 
+		</property> setAddressSet call <property name="addressSet"> <set> <value>KOR</value> 
+		<value>BRAZIL</value> </set> </property> setAddressMap call <property name="addressMap"> 
+		<map> <entry key="1" value="ARG" /> <entry key="2" value="DEU" /> </map> 
+		</property> setAddressPro call <property name="addressPro"> <props> <prop 
+		key="1">KEVIN</prop> <prop key="2">FANNY</prop> </props> </property> </bean> -->
 
 	<!-- <bean id="car" class="com.tutorialspoint.Car"> <constructor-arg ref="engine"></constructor-arg> 
 		<constructor-arg ref="wheel"></constructor-arg> </bean> <bean id="engine" 
@@ -76,4 +56,23 @@
 
 
 	<!-- <bean class="com.tutorialspoint.InitHelloWorld"></bean> -->
+
+	<!-- To active the annotation config, if not, the annotation is not called -->
+
+	<!-- @Qualifier -->
+	<!-- <bean id="carFactory" class="com.tutorialspoint.CarFactory"> </bean> 
+		<bean id="car1" class="com.tutorialspoint.Car"> </bean> <bean id="engine1" 
+		class="com.tutorialspoint.Engine"> <property name="name" value="Férari"></property> 
+		<property name="rpm" value="500"></property> </bean> <bean id="wheel1" class="com.tutorialspoint.Wheel"> 
+		<property name="brand" value="Férari"></property> </bean> <bean id="car2" 
+		class="com.tutorialspoint.Car"> </bean> <bean id="engine2" class="com.tutorialspoint.Engine"> 
+		<property name="name" value="BMW"></property> <property name="rpm" value="500"></property> 
+		</bean> <bean id="wheel2" class="com.tutorialspoint.Wheel"> <property name="brand" 
+		value="BMW"></property> </bean> -->
+
+	<!-- <bean id="textEditor" class="com.tutorialspoint.TextEditor"> <constructor-arg 
+		ref="spellChecker"></constructor-arg> <property name="spellChecker" ref="spellChecker"></property> 
+		</bean> -->
+
+	<!-- <bean id="spellChecker" class="com.tutorialspoint.SpellChecker"> </bean> -->
 </beans>

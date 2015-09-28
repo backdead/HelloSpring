@@ -1,17 +1,35 @@
 package com.tutorialspoint;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Engine {
-	private final String name;
-	private final double rpm;
+	private String name;
 	
-	public Engine(String name, double rpm) {
+	private double rpm;
+	
+	public Engine() {
 		System.out.println("Engine constructor");
-		this.name = name;
-		this.rpm = rpm;
 	}
 	
 	public void Start() {
 		System.out.println("Engine starts...");
 	}
 	
+	@Autowired
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Autowired(required=false)
+	public void setRpm(double rpm) {
+		this.rpm = rpm;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public double getRpm() {
+		return this.rpm;
+	}
 }
