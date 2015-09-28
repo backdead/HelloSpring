@@ -23,8 +23,8 @@ public class MainApp {
 //      
 //      context.registerShutdownHook();
 	   
-	   TextEditor te = (TextEditor) context.getBean("textEditor");
-	   te.spellCheck();
+//	   TextEditor te = (TextEditor) context.getBean("textEditor");
+//	   te.spellCheck();
 	   
 //	   Car car = (Car) context.getBean("car");
 //	   car.start();
@@ -40,9 +40,9 @@ public class MainApp {
 //	   System.out.println("Name: " + obj.getName());
 //	   System.out.println("Age: " + obj.getAge());
 	   
-//	   CarFactory obj = (CarFactory) context.getBean("carFactory");
-//	   
-//	   obj.start();
+	   CarFactory obj = (CarFactory) context.getBean("carFactory");
+	   
+	   obj.start();
 	   
    } 
 }

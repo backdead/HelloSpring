@@ -7,16 +7,26 @@ public class SayToWorld {
 	private String message1;
 	private String message2;
 	
-	@PostConstruct
-	public void init() {
-		System.out.println("Initialiez the parameter");
-		message1 = "OK";
-	}
+//	@PostConstruct
+//	public void init() {
+//		System.out.println("Initialiez the parameter");
+//		message1 = "OK";
+//	}
+//	
+//	//@PostConstruct
+//	public void init1() {
+//		message2 = "yes i can";
+//	}
 	
-	@PreDestroy
-	public void destroy() {
-		System.out.println("Bean will destroy now.");
-	}
+//	@PreDestroy
+//	public void destroy() {
+//		System.out.println("Bean will destroy now.");
+//	}
+//	
+//	@PreDestroy
+//	public void destroy1() {
+//		System.out.println("Bean will be destroied again");
+//	}
 	
 	public void setMessage1(String message1) {
 		this.message1 = message1;
@@ -35,5 +45,7 @@ public class SayToWorld {
 	}
 
 
-	//public abstract String text();
+	public void displayMessage() {
+		System.out.println(message1 + " " + message2);
+	};
 }
