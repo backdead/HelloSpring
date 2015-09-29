@@ -8,7 +8,15 @@
 	<context:annotation-config />
 
 	<!-- init-method="init" destroy-method="destroy" -->
+	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+		<property name="message" value="hello kevin"></property>
+	</bean>
 
+	<bean id="cStartEventHandler" class="com.tutorialspoint.CStartEventHandler">
+	</bean>
+
+	<bean id="cStopEventHandler" class="com.tutorialspoint.CStopEventHandler">
+	</bean>
 	<!-- <bean id="sayToWorld" class="com.tutorialspoint.SayToWorld" init-method="init" 
 		destroy-method="destroy"> <property name="message1" value="hello world"></property> 
 		<property name="message2" value="hello second world"></property> </bean> -->
@@ -59,32 +67,18 @@
 	<!-- To active the annotation config, if not, the annotation is not called -->
 
 	<!-- @Qualifier -->
-	<!-- <bean id="carFactory" class="com.tutorialspoint.CarFactory">
-	</bean>
-	<bean id="car1" class="com.tutorialspoint.Car">
-	</bean>
-	<bean id="engine1" class="com.tutorialspoint.Engine">
-		<property name="name" value="Férari"></property>
-		<property name="rpm" value="500"></property>
-	</bean>
-	<bean id="wheel1" class="com.tutorialspoint.Wheel">
-		<property name="brand" value="Férari"></property>
-	</bean>
-	<bean id="car2" class="com.tutorialspoint.Car">
-	</bean>
-	<bean id="engine2" class="com.tutorialspoint.Engine">
-		<property name="name" value="BMW"></property>
-		<property name="rpm" value="500"></property>
-	</bean>
-	<bean id="wheel2" class="com.tutorialspoint.Wheel">
-		<property name="brand" value="BMW"></property>
-	</bean> -->
+	<!-- <bean id="carFactory" class="com.tutorialspoint.CarFactory"> </bean> 
+		<bean id="car1" class="com.tutorialspoint.Car"> </bean> <bean id="engine1" 
+		class="com.tutorialspoint.Engine"> <property name="name" value="Férari"></property> 
+		<property name="rpm" value="500"></property> </bean> <bean id="wheel1" class="com.tutorialspoint.Wheel"> 
+		<property name="brand" value="Férari"></property> </bean> <bean id="car2" 
+		class="com.tutorialspoint.Car"> </bean> <bean id="engine2" class="com.tutorialspoint.Engine"> 
+		<property name="name" value="BMW"></property> <property name="rpm" value="500"></property> 
+		</bean> <bean id="wheel2" class="com.tutorialspoint.Wheel"> <property name="brand" 
+		value="BMW"></property> </bean> -->
 
-	<!-- <bean id="textEditor" class="com.tutorialspoint.TextEditor">
-		<constructor-arg ref="spellChecker"></constructor-arg> <property name="spellChecker" 
-			ref="spellChecker"></property>
-	</bean>
-
-	<bean id="spellChecker" class="com.tutorialspoint.SpellChecker">
-	</bean>-->
+	<!-- <bean id="textEditor" class="com.tutorialspoint.TextEditor"> <constructor-arg 
+		ref="spellChecker"></constructor-arg> <property name="spellChecker" ref="spellChecker"></property> 
+		</bean> <bean id="spellChecker" class="com.tutorialspoint.SpellChecker"> 
+		</bean> -->
 </beans>

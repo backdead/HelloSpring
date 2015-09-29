@@ -40,9 +40,16 @@ public class MainApp {
 //	   System.out.println("Name: " + obj.getName());
 //	   System.out.println("Age: " + obj.getAge());
 	   
-	   CarFactory obj = (CarFactory) context.getBean("carFactory");
+//	   CarFactory obj = (CarFactory) context.getBean("carFactory");
+//	   
+//	   obj.start();
 	   
-	   obj.start();
+	   context.start();
+	   HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+	   
+	   obj.getMessage();
+	   
+	   context.stop();
 	   
    } 
 }
