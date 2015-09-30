@@ -1,6 +1,6 @@
 package com.tutorialspoint;
 
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
@@ -51,13 +51,20 @@ public class MainApp {
 //	   
 //	   context.stop();
 	   
-	   ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-	   CustomEventPublisher cvp = (CustomEventPublisher) context.getBean("customEventPublisher");
+	   /*Event*/	   
+//	   ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+//	   CustomEventPublisher cvp = (CustomEventPublisher) context.getBean("customEventPublisher");
+//	   
+//	   cvp.publish();
+//	   cvp.publish();
 	   
-	   cvp.publish();
-	   cvp.publish();
+	   ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 	   
+	   Student student = (Student) context.getBean("student");
+	   student.getName();
+	   student.getAge();
 	   
+	   student.printThrowException();
 	   
 	   
    } 
