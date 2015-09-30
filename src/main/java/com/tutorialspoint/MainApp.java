@@ -1,11 +1,11 @@
 package com.tutorialspoint;
 
-import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
    public static void main(String[] args) {
-	   AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+	   //AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 //	   //XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
 //
 //      SayToWorld objA = (SayToWorld) context.getBean("sayToWorld");
@@ -44,12 +44,21 @@ public class MainApp {
 //	   
 //	   obj.start();
 	   
-	   context.start();
-	   HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+//	   context.start();
+//	   HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+//	   
+//	   obj.getMessage();
+//	   
+//	   context.stop();
 	   
-	   obj.getMessage();
+	   ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+	   CustomEventPublisher cvp = (CustomEventPublisher) context.getBean("customEventPublisher");
 	   
-	   context.stop();
+	   cvp.publish();
+	   cvp.publish();
+	   
+	   
+	   
 	   
    } 
 }

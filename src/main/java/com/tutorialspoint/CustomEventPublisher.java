@@ -3,7 +3,7 @@ package com.tutorialspoint;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 
-public class CustomerEventPublisher implements ApplicationEventPublisherAware {
+public class CustomEventPublisher implements ApplicationEventPublisherAware {
 	
 	private ApplicationEventPublisher publisher;
 	

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-	<context:annotation-config />
+	<!-- <context:annotation-config /> -->
 
 	<!-- init-method="init" destroy-method="destroy" -->
-	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
-		<property name="message" value="hello kevin"></property>
-	</bean>
-
-	<bean id="cStartEventHandler" class="com.tutorialspoint.CStartEventHandler">
-	</bean>
-
-	<bean id="cStopEventHandler" class="com.tutorialspoint.CStopEventHandler">
-	</bean>
+	<!-- <bean id="helloWorld" class="com.tutorialspoint.HelloWorld"> <property 
+		name="message" value="hello kevin"></property> </bean> <bean id="cStartEventHandler" 
+		class="com.tutorialspoint.CStartEventHandler"> </bean> <bean id="cStopEventHandler" 
+		class="com.tutorialspoint.CStopEventHandler"> </bean> -->
 	<!-- <bean id="sayToWorld" class="com.tutorialspoint.SayToWorld" init-method="init" 
 		destroy-method="destroy"> <property name="message1" value="hello world"></property> 
 		<property name="message2" value="hello second world"></property> </bean> -->
@@ -81,4 +80,12 @@
 		ref="spellChecker"></constructor-arg> <property name="spellChecker" ref="spellChecker"></property> 
 		</bean> <bean id="spellChecker" class="com.tutorialspoint.SpellChecker"> 
 		</bean> -->
+
+<!-- 	<bean id="customEventHandler" class="com.tutorialspoint.CustomEventHandler" />
+
+	<bean id="customEventPublisher" class="com.tutorialspoint.CustomEventPublisher" /> -->
+	
+	<!-- bean definition & AOP specific configuration -->
+	
+
 </beans>
