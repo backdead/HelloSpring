@@ -6,15 +6,21 @@ import javax.sql.DataSource;
 
 public interface StudentDAO {
 
-	   public void setDataSource(DataSource ds);
+	// public void setDataSource(DataSource ds);
+	//
+	// public void create(String name, Integer age);
+	//
+	// public Student getStudent(Integer id);
+	//
+	// public List<Student> listStudents();
+	//
+	// public void delete(Integer id);
+	//
+	// public void update(Integer id, Integer age);
 
-	   public void create(String name, Integer age);
+	public void setDataSource(DataSource ds);
 
-	   public Student getStudent(Integer id);
+	public void create(String name, int age, int marks, int year);
 
-	   public List<Student> listStudents();
-
-	   public void delete(Integer id);
-
-	   public void update(Integer id, Integer age);
+	public List<StudentMarks> listStudents();
 }

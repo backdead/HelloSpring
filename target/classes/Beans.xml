@@ -112,13 +112,20 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="url" value="jdbc:mysql://localhost:8001/test" />
 		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="password" value="root" />
 	</bean>
 
 	<!-- Definition for studentJDBCTemplate bean -->
-	<bean id="studentJDBCTemplate" class="com.tutorialspoint.StudentJDBCTemplate">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- Initialization for TransactionManager -->
+	<bean id="studentJDBCTemplate"
+		class="com.tutorialspoint.StudentJDBCTemplate">
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
 	</bean>
 </beans>
